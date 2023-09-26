@@ -22,8 +22,15 @@ const config: Config = {
         lightBrown : '#897474',
         grey : '#D7D7D7',
         lightGrey: '#E4E4E4',
-      }
+      },
     },
+    borderRadius: {
+        5:'5px',
+        8:'8px',
+        16:'16px',
+        30:'30px',
+        full:'100%',
+    }
   },
   plugins: [],
 }
