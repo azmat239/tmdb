@@ -1,5 +1,5 @@
 import React from "react";
-import { TextType } from "../Text.types";
+import { TextType } from "./Text.types";
 import classNames from "classnames";
 
 const Text = ({ text, variant, extraClasses }: TextType) => {
