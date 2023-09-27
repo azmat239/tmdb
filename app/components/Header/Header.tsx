@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Logo from "./Logo/Logo";
 import Link from "./Menu/NavLink";
