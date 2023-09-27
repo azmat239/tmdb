@@ -1,19 +1,20 @@
 import React from "react";
 import Logo from "./Logo/Logo";
-import Link from "./Link/NavLink";
-import NavLink from "./Link/NavLink";
+import Link from "./Menu/NavLink";
+import MenuNav from "./Menu/MenuNav";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <div>
-      <div>
+    <div className="flex justify-evenly  bg-darkBlue py-4">
+      <div className="flex gap-2">
         <Logo />
-        <div>
-          <NavLink text="Movies" url="/" />
-        </div>
+        <MenuNav />
       </div>
 
-      <div className="search"></div>
+      <a href="#" className="search ">
+        <BiSearchAlt2 className="text-2xl text-lightBlue" />
+      </a>
     </div>
   );
 };

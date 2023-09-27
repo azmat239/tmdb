@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import NavLink from "./NavLink";
+import MenuNav from "./MenuNav";
 
 const meta = {
-  title: "Components/NavLink",
-  component: NavLink,
+  title: "Components/MenuNav",
+  component: MenuNav,
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof NavLink>;
+} satisfies Meta<typeof MenuNav>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Heading_24: Story = {
+export const MenuNav_movies: Story = {
   args: {
-    text: "Movies",
+    text: "movies",
     url: "/",
   },
 };
