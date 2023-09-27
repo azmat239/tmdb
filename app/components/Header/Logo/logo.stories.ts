@@ -13,6 +13,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Logo_i: Story = {
-  args: {},
+export const Logo_svg: Story = {
+  args: {
+    ImgSrc: "./tmdblogo.svg",
+    url: "/",
+    altText: "Not found",
+  },
 };

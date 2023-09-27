@@ -1,14 +1,26 @@
 import React from "react";
 import NavLink from "./NavLink";
 
-const MenuNav = () => {
+export type MenuType = {
+  text: string;
+  url: string;
+};
+
+export type MenutypeMain = {
+  links: Array<MenuType>;
+};
+
+const MenuNav = ({ links }: MenutypeMain) => {
   return (
-    <div className="flex gap-4 mr-24 ">
-      <NavLink text="Movies" url="/" />
-      <NavLink text="Tv Shows" url="/" />
-      <NavLink text="Profile" url="/" />
-      <NavLink text="More" url="/" />
-    </div>
+    <ul className="flex gap-4 mr-24 ">
+      {links.map((links) => {
+        return (
+          <li>
+            <NavLink text={links.text} url={links.url} />
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

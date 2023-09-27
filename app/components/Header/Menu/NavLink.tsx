@@ -5,11 +5,9 @@ import Text from "../../Text/Text";
 
 const NavLink = ({ text, url, extraClasses }: NavLinkTypes) => {
   return (
-    <div className={`${extraClasses}`}>
-      <Link href={url}>
-        <Text text={text} variant="16" extraClasses="text-white p-2" />
-      </Link>
-    </div>
+    <Link href={url} className={`${extraClasses}`}>
+      <Text text={text} variant="16" extraClasses="text-white p-2" />
+    </Link>
   );
 };
 

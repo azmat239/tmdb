@@ -13,9 +13,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const MenuNav_movies: Story = {
+export const NavMenu: Story = {
   args: {
-    text: "movies",
-    url: "/",
+    links: [
+      { text: "Movies", url: "/Movies" },
+      { text: "Tv Show", url: "/TvShow" },
+      { text: "People", url: "/People" },
+      { text: "More", url: "/More" },
+    ],
   },
 };

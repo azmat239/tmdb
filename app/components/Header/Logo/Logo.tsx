@@ -1,12 +1,13 @@
 import React from "react";
-import logoImg from "../../../../public/tmdblogo.svg";
 import Image from "next/image";
+import Link from "next/link";
+import { LogoType } from "./Logo.type";
 
-const Logo = () => {
+const Logo = ({ ImgSrc, url, altText }: LogoType) => {
   return (
-    <div className="p-2">
-      <Image src={logoImg} alt="no" width={150} height={150} />
-    </div>
+    <Link href={url} className="p-2">
+      <Image src={ImgSrc} alt={altText} width={150} height={150} />
+    </Link>
   );
 };
 

@@ -5,18 +5,18 @@ import Link from "./Menu/NavLink";
 import MenuNav from "./Menu/MenuNav";
 import { BiSearchAlt2 } from "react-icons/bi";
 
-const Header = () => {
+const Header = ({ imgsrc, links, actionIcon }: any) => {
   return (
-    <div className="flex justify-evenly  bg-darkBlue py-4">
+    <header className="flex justify-evenly  bg-darkBlue py-4">
       <div className="flex gap-2">
-        <Logo />
-        <MenuNav />
+        <Logo ImgSrc={imgsrc} url="/" altText="image Not found" />
+        <MenuNav links={links} />
       </div>
 
       <button onClick={() => alert("Clicked On Search")}>
-        <BiSearchAlt2 className="text-2xl text-lightBlue" />
+        <BiSearchAlt2 className={actionIcon} />
       </button>
-    </div>
+    </header>
   );
 };
 
