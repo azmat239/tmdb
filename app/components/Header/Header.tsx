@@ -12,9 +12,9 @@ const Header = () => {
         <MenuNav />
       </div>
 
-      <a href="#" className="search ">
+      <button onClick={() => alert("Clicked On Search")}>
         <BiSearchAlt2 className="text-2xl text-lightBlue" />
-      </a>
+      </button>
     </div>
   );
 };
