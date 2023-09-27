@@ -33,7 +33,7 @@ const Heading = ({ text, variant, extraClasses }: HeadingType) => {
       break;
   }
   return (
-    <DynamicTag className={`${headingClasses} ${extraClasses}`}>
+    <DynamicTag className={`${headingClasses} ${extraClasses ?? ""}`}>
       {text}
     </DynamicTag>
   );
