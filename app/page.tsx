@@ -21,7 +21,7 @@ const links = [
   },
 ];
 
-let logoValue = { ImgSrc: "tmdblogo.svg", url: "/", altText: "Not Found" };
+let logoValue = { imgSrc: "tmdblogo.svg", url: "/", altText: "Not Found" };
 export default function Home() {
   return (
     <main className="min-h-screen">

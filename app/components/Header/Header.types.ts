@@ -1,8 +1,10 @@
 import { IconType } from "react-icons";
+import { LogoType } from "../Logo/Logo.type";
+import { NavLinkType } from "../NavLink/NavLink.types";
 
 export type HeaderType = {
-  logo: { ImgSrc: string; url: string; altText: string };
-  links: Array<{ text: string; url: string }>;
+  logo: LogoType;
+  links: Array<NavLinkType>;
   ActionIcon: IconType;
   extraClasses?: string;
 };

@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Headers: Story = {
   args: {
     logo: {
-      ImgSrc: "https://placehold.jp/150x20.png",
+      imgSrc: "https://placehold.jp/150x20.png",
       url: "/",
       altText: "nothing",
     },

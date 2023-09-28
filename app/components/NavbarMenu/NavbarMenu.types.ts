@@ -1,9 +1,6 @@
-export type MenuType = {
-  text: string;
-  url: string;
-};
+import { NavLinkType } from "../NavLink/NavLink.types";
 
-export type MenutypeMain = {
-  links: Array<MenuType>;
+export type navbarMenutype = {
+  links: Array<NavLinkType>;
   extraClasses?: string;
 };

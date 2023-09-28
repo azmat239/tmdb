@@ -5,16 +5,16 @@ import { HeaderType } from "./Header.types";
 import NavbarMenu from "../NavbarMenu/NavbarMenu";
 
 const Header = ({ logo, links, ActionIcon, extraClasses }: HeaderType) => {
-  let HeaderClass = classNames("text-2xl text-lightBlue");
+  let HeaderClass = classNames("flex justify-evenly  bg-darkBlue py-4");
   return (
-    <header className="flex justify-evenly  bg-darkBlue py-4">
+    <header className={`${HeaderClass} ${extraClasses ?? ""}`}>
       <div className="flex gap-2">
-        <Logo logo={logo} />
+        <Logo imgSrc={logo.imgSrc} url={logo.url} altText={logo.altText} />
         <NavbarMenu links={links} />
       </div>
 
       <button>
-        <ActionIcon className={`${HeaderClass} ${extraClasses ?? ""}`} />
+        <ActionIcon className="text-lightBlue" />
       </button>
     </header>
   );

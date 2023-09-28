@@ -1,12 +1,12 @@
 import React from "react";
 import NavLink from "../NavLink/NavLink";
-import { MenutypeMain } from "./NavbarMenu.types";
 import classNames from "classnames";
+import { navbarMenutype } from "./NavbarMenu.types";
 
-const MenuNav = ({ links, extraClasses }: MenutypeMain) => {
-  let MenuNavClasses = classNames("flex mr-24");
+const NavbarMenu = ({ links, extraClasses }: navbarMenutype) => {
+  let menuNavClasses = classNames("flex gap-4 px-4");
   return (
-    <ul className={`${MenuNavClasses} ${extraClasses ?? ""}`}>
+    <ul className={`${menuNavClasses} ${extraClasses ?? ""}`}>
       {links.map((links, index) => {
         return (
           <li key={index}>
@@ -18,4 +18,4 @@ const MenuNav = ({ links, extraClasses }: MenutypeMain) => {
   );
 };
 
-export default MenuNav;
+export default NavbarMenu;

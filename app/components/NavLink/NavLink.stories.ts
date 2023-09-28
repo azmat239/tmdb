@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Navbar_Links: Story = {
+export const Navbar_Link: Story = {
   args: {
     text: "Movies",
     url: "/movies",
