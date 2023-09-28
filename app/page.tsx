@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Header from "@/app/components/Header/Header";
-import img from "@/public/tmdblogo.svg";
+import { BiSearchAlt2 } from "react-icons/bi";
 
 const links = [
   {
@@ -21,10 +21,11 @@ const links = [
   },
 ];
 
+let logoValue = { ImgSrc: "tmdblogo.svg", url: "/", altText: "Not Found" };
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Header imgsrc={img} links={links} actionIcon="text-2xl text-lightBlue" />
+      <Header logo={logoValue} links={links} ActionIcon={BiSearchAlt2} />
     </main>
   );
 }

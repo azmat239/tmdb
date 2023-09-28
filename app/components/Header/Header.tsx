@@ -1,20 +1,20 @@
-"use client";
 import React from "react";
-import Logo from "./Logo/Logo";
-import Link from "./Menu/NavLink";
-import MenuNav from "./Menu/MenuNav";
-import { BiSearchAlt2 } from "react-icons/bi";
+import Logo from "../Logo/Logo";
+import classNames from "classnames";
+import { HeaderType } from "./Header.types";
+import NavbarMenu from "../NavbarMenu/NavbarMenu";
 
-const Header = ({ imgsrc, links, actionIcon }: any) => {
+const Header = ({ logo, links, ActionIcon, extraClasses }: HeaderType) => {
+  let HeaderClass = classNames("text-2xl text-lightBlue");
   return (
     <header className="flex justify-evenly  bg-darkBlue py-4">
       <div className="flex gap-2">
-        <Logo ImgSrc={imgsrc} url="/" altText="image Not found" />
-        <MenuNav links={links} />
+        <Logo logo={logo} />
+        <NavbarMenu links={links} />
       </div>
 
-      <button onClick={() => alert("Clicked On Search")}>
-        <BiSearchAlt2 className={actionIcon} />
+      <button>
+        <ActionIcon className={`${HeaderClass} ${extraClasses ?? ""}`} />
       </button>
     </header>
   );
