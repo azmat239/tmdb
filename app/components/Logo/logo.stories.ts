@@ -15,11 +15,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Logo_svg: Story = {
   args: {
-    logo: {
-      ImgSrc: "https://placehold.jp/150x20.png",
-      url: "/",
-      altText: "nothing",
-    },
+    imgSrc: "https://placehold.jp/150x20.png",
+    url: "/",
+    altText: "nothing",
     extraClasses: "",
   },
 };
