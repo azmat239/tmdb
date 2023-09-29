@@ -1,15 +1,11 @@
-export type footerType = {
+import { FooterMenuType } from "../footerMenu/FooterMenu.types";
+
+export type FooterType = {
   logo: {
     imgSrc: string;
     url: string;
     imgAlt: string;
   };
-  menu: Array<{
-    title: string;
-    links: Array<{
-      text: string;
-      url: string;
-    }>;
-  }>;
+  menus: Array<FooterMenuType>;
   extraClasses?: string;
 };
