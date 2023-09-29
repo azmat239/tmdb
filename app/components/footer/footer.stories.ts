@@ -21,7 +21,7 @@ export const footer_Menu: Story = {
       url: "/",
       imgAlt: "Not Found",
     },
-    menu: [
+    menus: [
       {
         title: "THE Basics",
         links: [

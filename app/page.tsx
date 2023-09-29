@@ -24,7 +24,7 @@ const links = [
 
 let logoValue = { imgSrc: "tmdblogo.svg", url: "/", altText: "Not Found" };
 let Footerlogo = { imgSrc: "footerlogo.svg", url: "/", imgAlt: "Not Found" };
-const menu = [
+const menus = [
   {
     title: "THE BASICS",
     links: [
@@ -94,7 +94,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header logo={logoValue} links={links} ActionIcon={BiSearchAlt2} />
       Homepage
-      <Footer menu={menu} logo={Footerlogo} />
+      <Footer menus={menus} logo={Footerlogo} />
     </main>
   );
 }
