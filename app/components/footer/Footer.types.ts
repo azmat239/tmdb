@@ -4,4 +4,12 @@ export type footerType = {
     url: string;
     imgAlt: string;
   };
+  menu: Array<{
+    title: string;
+    links: Array<{
+      text: string;
+      url: string;
+    }>;
+  }>;
+  extraClasses?: string;
 };

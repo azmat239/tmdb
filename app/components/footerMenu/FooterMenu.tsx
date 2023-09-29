@@ -2,39 +2,16 @@ import React from "react";
 import FooterLink from "../footerLink/footerLink";
 import { FooterMenuType } from "./FooterMenu.types";
 import classNames from "classnames";
-import Link from "next/link";
+import Heading from "../Heading/Heading";
 
-const FooterMenu = ({ extraClasses }: FooterMenuType) => {
-  let FooterClass = classNames("flex gap-4 px-4");
+const FooterMenu = ({ title, links, extraClasses }: FooterMenuType) => {
+  let footerMenuClass = classNames("px-8");
   return (
-    <div className={`${FooterClass} ${extraClasses}`}>
-      <FooterLink
-        title="THE BASICS"
-        text={[
-          "AboutTMDB",
-          "Contact us",
-          "Support Forum",
-          "Api",
-          "System Support",
-        ]}
-      />
-      <FooterLink
-        title="GET INVOLVED"
-        text={["Contribution Bible", "Add New Movies", "Add New Tv Shows"]}
-      />
-      <FooterLink
-        title="COMMUNITY"
-        text={["Guidelines", "Discussion", "Leaderboard", "Twiter"]}
-      />
-      <FooterLink
-        title="LEGAL"
-        text={[
-          "Terms of Use",
-          "API Terms of Use",
-          "Privacy Policy",
-          "DMCA Takedown Request",
-        ]}
-      />
+    <div className={`${footerMenuClass} ${extraClasses ?? ""}`}>
+      <Heading text={title} variant="20" extraClasses="text-white pb-1" />
+      {links.map((links, index) => {
+        return <FooterLink key={index} url={links.url} text={links.text} />;
+      })}
     </div>
   );
 };

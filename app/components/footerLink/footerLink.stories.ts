@@ -15,8 +15,8 @@ type Story = StoryObj<typeof meta>;
 
 export const footer_Link: Story = {
   args: {
-    title: "The Basics",
-    text: ["AboutTMDB", "Contact us", "Support Forum", "Api", "System Support"],
+    text: "AboutTMDB",
+    url: "/",
     extraClasses: "",
   },
 };

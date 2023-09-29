@@ -1,5 +1,5 @@
 export type footerLinkType = {
-  title: string;
-  text: Array<string>;
+  text: string;
+  url: string;
   extraClasses?: string;
 };

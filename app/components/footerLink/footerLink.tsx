@@ -5,21 +5,12 @@ import Text from "../Text/Text";
 import { footerLinkType } from "./footerLink.type";
 import Link from "next/link";
 
-const FooterLink = ({ title, text, extraClasses }: footerLinkType) => {
-  let footerClasses = classNames("px-2 text-white");
+const FooterLink = ({ text, url, extraClasses }: footerLinkType) => {
+  let footerLinkClasses = classNames("");
   return (
-    <div className={`${footerClasses} ${extraClasses}`}>
-      <Heading text={title} variant="20" />
-      <ul>
-        {text.map((text) => {
-          return (
-            <Link href="/">
-              <Text text={`${text}`} variant="14" extraClasses="text-white" />
-            </Link>
-          );
-        })}
-      </ul>
-    </div>
+    <Link href="/" className={`${footerLinkClasses} ${extraClasses ?? ""} `}>
+      <Text text={text} variant="12" extraClasses="text-white" />
+    </Link>
   );
 };
 
