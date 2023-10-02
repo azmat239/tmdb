@@ -5,7 +5,7 @@ import classNames from "classnames";
 import Heading from "../Heading/Heading";
 
 const FooterMenu = ({ title, links, extraClasses }: FooterMenuType) => {
-  let footerMenuClass = classNames("px-8");
+  let footerMenuClass = classNames("px-8 py-24");
   return (
     <div className={`${footerMenuClass} ${extraClasses ?? ""}`}>
       <Heading text={title} variant="20" extraClasses="text-white pb-1" />

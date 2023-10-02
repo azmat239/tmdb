@@ -2,10 +2,10 @@ import React from "react";
 import Heading from "../Heading/Heading";
 import classNames from "classnames";
 import Text from "../Text/Text";
-import { footerLinkType } from "./footerLink.type";
+import { FooterLinkType } from "./footerLink.type";
 import Link from "next/link";
 
-const FooterLink = ({ text, url, extraClasses }: footerLinkType) => {
+const FooterLink = ({ text, url, extraClasses }: FooterLinkType) => {
   let footerLinkClasses = classNames("");
   return (
     <Link href="/" className={`${footerLinkClasses} ${extraClasses ?? ""} `}>

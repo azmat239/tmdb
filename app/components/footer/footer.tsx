@@ -5,9 +5,7 @@ import { FooterType } from "./Footer.types";
 import classNames from "classnames";
 
 const Footer = ({ menus, logo, extraClasses }: FooterType) => {
-  let footerClass = classNames(
-    "flex h-[308px] bg-darkBlue justify-center items-center"
-  );
+  let footerClass = classNames("flex  bg-darkBlue justify-center");
   return (
     <footer className={`${footerClass} ${extraClasses ?? ""}`}>
       <FooterLogo imgSrc={logo.imgSrc} imgAlt={logo.imgAlt} url={logo.url} />
