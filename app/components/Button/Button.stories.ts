@@ -13,11 +13,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const button: Story = {
+export const Hero_Search_Button: Story = {
   args: {
     text: "Search",
-    variant: "Hero-section",
-    onButtonClicked: () => {
+    variant: "hero-section",
+    onClick: () => {
       alert(".... Searching ....");
     },
   },

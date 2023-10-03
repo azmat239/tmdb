@@ -92,22 +92,6 @@ const menus = [
   },
 ];
 
-let HeroProps = {
-  inputProps: {
-    placeHolder: "Search for a Movie, Tv Shows or People ....",
-    onInputChange: () => {
-      console.log("Changed The Text");
-    },
-    // defaultValue: "Iron Man 4",
-  },
-  buttonProps: {
-    text: "Search",
-    variant: "Hero-section",
-    onButtonClicked: () => {
-      alert(".... Searching ....");
-    },
-  },
-};
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -115,8 +99,7 @@ export default function Home() {
       <Hero
         title="Welcome"
         description="Millions of movies, TV shows and people to discover. Explore Now."
-        bgImg="HeroSection.svg"
-        HeroProp={HeroProps}
+        bgImg="HeroSection.png"
       />
 
       <div>Homepage</div>

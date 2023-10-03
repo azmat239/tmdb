@@ -1,6 +1,6 @@
 export type ButtonTypes = {
   text: string;
-  variant: "Hero-section";
-  onButtonClicked: () => void;
+  variant: "hero-section";
+  onClick?: React.MouseEventHandler;
   extraClasses?: string;
 };

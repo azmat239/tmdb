@@ -1,6 +1,6 @@
 export type InputType = {
-  placeHolder: string;
-  onInputChange: () => void;
+  placeholder: string;
+  onInputChange: React.ChangeEventHandler;
   // defaultValue: string;
   extraClasses?: string;
 };

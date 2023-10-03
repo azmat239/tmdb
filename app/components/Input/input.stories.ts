@@ -13,9 +13,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const button: Story = {
+export const Hero_Input: Story = {
   args: {
-    placeHolder: "Search for a Movie, Tv Shows or People ....",
+    placeholder: "Search for a Movie, Tv Shows or People ....",
     onInputChange: () => {
       console.log("Changed The Text");
     },

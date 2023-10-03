@@ -4,24 +4,23 @@ import { InputType } from "./input.types";
 import classNames from "classnames";
 
 const Input = ({
-  placeHolder,
+  placeholder,
   onInputChange,
   // defaultValue,
   extraClasses,
 }: InputType) => {
-  let inputClass = classNames("h-[44px] w-[1220px] px-5 py-3 rounded-30");
-  let inputMain = classNames("px-10 border-0 focus:outline-0");
+  let inputClass = classNames(
+    "h-[44px] w-[1220px] py-6 rounded-30 px-8 border-0 focus:outline-0"
+  );
   return (
-    <div className={`${inputMain} ${extraClasses ?? ""}`}>
-      <input
-        type="text"
-        name="search"
-        // value={defaultValue}
-        onChange={onInputChange}
-        placeholder={placeHolder}
-        className={`${inputClass}`}
-      />
-    </div>
+    <input
+      type="text"
+      name="search"
+      // value={defaultValue}
+      onChange={onInputChange}
+      placeholder={placeholder}
+      className={`${inputClass} ${extraClasses ?? ""}`}
+    />
   );
 };
 

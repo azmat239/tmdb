@@ -4,22 +4,18 @@ import { ButtonTypes } from "./Button.types";
 import classNames from "classnames";
 import Text from "../Text/Text";
 
-const Button = ({
-  text,
-  variant,
-  onButtonClicked,
-  extraClasses,
-}: ButtonTypes) => {
+const Button = ({ text, variant, onClick, extraClasses }: ButtonTypes) => {
   let buttonClasses = classNames("", {
-    "py-3 px-6 rounded-30 bg-lightBlue": variant == "Hero-section",
+    "py-3 px-6 rounded-30 bg-lightBlue text-white text-[16px]":
+      variant == "hero-section",
   });
   return (
     <button
       type="button"
       className={`${buttonClasses} ${extraClasses ?? ""}`}
-      onClick={onButtonClicked}
+      onClick={onClick}
     >
-      <Text text={text} variant="16" extraClasses="text-white" />
+      {text}
     </button>
   );
 };

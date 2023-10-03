@@ -16,18 +16,15 @@ type Story = StoryObj<typeof meta>;
 export const Hero_Search_Bar: Story = {
   args: {
     inputProps: {
-      placeHolder: "Search for a Movie, Tv Shows or People ....",
+      placeholder: "Search for a Movie, Tv Shows or People ....",
       onInputChange: () => {
         console.log("Changed The Text");
       },
-      defaultValue: "Iron Man 4",
+      // defaultValue: "Iron Man 4",
     },
-    buttonProps: {
-      text: "Search",
-      variant: "Hero-section",
-      onButtonClicked: () => {
-        alert(".... Searching ....");
-      },
+
+    onSearchClick: () => {
+      alert(".... Searching ....");
     },
   },
 };

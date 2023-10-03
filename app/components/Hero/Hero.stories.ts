@@ -19,21 +19,6 @@ export const hero: Story = {
     description:
       "Millions of movies, TV shows and people to discover. Explore now.",
     bgImg: "HeroSection.svg",
-    HeroProp: {
-      inputProps: {
-        placeHolder: "Search for a Movie, Tv Shows or People ....",
-        onInputChange: () => {
-          console.log("Changed The Text");
-        },
-        // defaultValue: "Iron Man 4",
-      },
-      buttonProps: {
-        text: "Search",
-        variant: "Hero-section",
-        onButtonClicked: () => {
-          alert(".... Searching ....");
-        },
-      },
-    },
+    // defaultValue: "Iron Man 4",
   },
 };

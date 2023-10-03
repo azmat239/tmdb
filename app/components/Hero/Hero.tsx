@@ -5,13 +5,14 @@ import Heading from "../Heading/Heading";
 import HeroSearchBar from "../HeroSearchBar/HeroSearchBar";
 import classNames from "classnames";
 
-const Hero = ({
-  title,
-  description,
-  HeroProp,
-  bgImg,
-  extraClasses,
-}: HeroType) => {
+const Hero = ({ title, description, bgImg, extraClasses }: HeroType) => {
+  let inputProp = {
+    placeholder: "Search for a Movie, Tv Shows or People ....",
+    onInputChange: () => {
+      console.log("Changed The Text");
+    },
+    // defaultValue: "Iron Man 4",
+  };
   const heroClass = classNames("py-16 ");
   return (
     <div
@@ -29,8 +30,10 @@ const Hero = ({
       </div>
 
       <HeroSearchBar
-        inputProps={HeroProp.inputProps}
-        buttonProps={HeroProp.buttonProps}
+        inputProps={inputProp}
+        onSearchClick={() => {
+          console.log("clicked");
+        }}
       />
     </div>
   );

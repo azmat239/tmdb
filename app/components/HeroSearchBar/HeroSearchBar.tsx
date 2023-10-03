@@ -2,28 +2,27 @@ import React from "react";
 import Input from "../Input/Input";
 import { HeroSearchBarType } from "./HeroSearchBar.types";
 import Button from "../Button/Button";
-import { button } from "../Button/Button.stories";
 import classNames from "classnames";
 
 const HeroSearchBar = ({
   inputProps,
-  buttonProps,
+  onSearchClick,
   extraClasses,
 }: HeroSearchBarType) => {
-  const HeroSearchBarClass = classNames("flex relative pt-12");
+  const HeroSearchBarClass = classNames("flex relative pt-12 px-6");
   return (
     <div className={`${HeroSearchBarClass} ${extraClasses ?? ""}`}>
       <Input
-        placeHolder={inputProps.placeHolder}
+        placeholder={inputProps.placeholder}
         onInputChange={inputProps.onInputChange}
         // defaultValue={inputProps.defaultValue}
       />
 
       <Button
-        text={buttonProps.text}
-        variant={buttonProps.variant}
-        onButtonClicked={buttonProps.onButtonClicked}
-        extraClasses="absolute right-12"
+        text="Search"
+        variant="hero-section"
+        onClick={onSearchClick}
+        extraClasses="absolute right-6"
       />
     </div>
   );

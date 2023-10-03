@@ -3,6 +3,6 @@ import { InputType } from "../Input/input.types";
 
 export type HeroSearchBarType = {
   inputProps: InputType;
-  buttonProps: ButtonTypes;
+  onSearchClick: React.MouseEventHandler;
   extraClasses?: string;
 };
