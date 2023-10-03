@@ -16,9 +16,9 @@ type Story = StoryObj<typeof meta>;
 export const button: Story = {
   args: {
     placeHolder: "Search for a Movie, Tv Shows or People ....",
-    onChange: () => {
-      alert("Changed The Text");
+    onInputChange: () => {
+      console.log("Changed The Text");
     },
-    defaultValue: "Iron Man 4",
+    // defaultValue: "Iron Man 4",
   },
 };

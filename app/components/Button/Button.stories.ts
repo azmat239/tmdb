@@ -17,7 +17,7 @@ export const button: Story = {
   args: {
     text: "Search",
     variant: "Hero-section",
-    onClicked: () => {
+    onButtonClicked: () => {
       alert(".... Searching ....");
     },
   },

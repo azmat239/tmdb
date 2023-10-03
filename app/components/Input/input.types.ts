@@ -1,6 +1,6 @@
 export type InputType = {
   placeHolder: string;
-  onChange: () => void;
-  defaultValue: string;
+  onInputChange: () => void;
+  // defaultValue: string;
   extraClasses?: string;
 };

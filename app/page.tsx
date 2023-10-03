@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Header from "@/app/components/Header/Header";
 import { BiSearchAlt2 } from "react-icons/bi";
 import Footer from "./components/footer/footer";
+import Hero from "./components/Hero/Hero";
 
 const links = [
   {
@@ -89,11 +91,35 @@ const menus = [
     ],
   },
 ];
+
+let HeroProps = {
+  inputProps: {
+    placeHolder: "Search for a Movie, Tv Shows or People ....",
+    onInputChange: () => {
+      console.log("Changed The Text");
+    },
+    // defaultValue: "Iron Man 4",
+  },
+  buttonProps: {
+    text: "Search",
+    variant: "Hero-section",
+    onButtonClicked: () => {
+      alert(".... Searching ....");
+    },
+  },
+};
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header logo={logoValue} links={links} ActionIcon={BiSearchAlt2} />
-      Homepage
+      <Hero
+        title="Welcome"
+        description="Millions of movies, TV shows and people to discover. Explore Now."
+        bgImg="HeroSection.svg"
+        HeroProp={HeroProps}
+      />
+
+      <div>Homepage</div>
       <Footer menus={menus} logo={Footerlogo} />
     </main>
   );
