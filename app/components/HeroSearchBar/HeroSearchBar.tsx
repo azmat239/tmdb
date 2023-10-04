@@ -9,21 +9,18 @@ const HeroSearchBar = ({
   onSearchClick,
   extraClasses,
 }: HeroSearchBarType) => {
-  const HeroSearchBarClass = classNames("flex relative pt-12 px-6");
+  const heroSearchBarClass = classNames(
+    "flex mx-10 mt-10 bg-white rounded-30 justify-between w-[1220px]"
+  );
   return (
-    <div className={`${HeroSearchBarClass} ${extraClasses ?? ""}`}>
+    <div className={`${heroSearchBarClass} ${extraClasses ?? ""}`}>
       <Input
         placeholder={inputProps.placeholder}
         onInputChange={inputProps.onInputChange}
-        // defaultValue={inputProps.defaultValue}
+        defaultValue={inputProps.defaultValue}
       />
 
-      <Button
-        text="Search"
-        variant="hero-section"
-        onClick={onSearchClick}
-        extraClasses="absolute right-6"
-      />
+      <Button text="Search" variant="hero-section" onClick={onSearchClick} />
     </div>
   );
 };

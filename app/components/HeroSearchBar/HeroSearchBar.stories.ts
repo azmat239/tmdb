@@ -20,7 +20,7 @@ export const Hero_Search_Bar: Story = {
       onInputChange: () => {
         console.log("Changed The Text");
       },
-      // defaultValue: "Iron Man 4",
+      defaultValue: "Iron Man 4",
     },
 
     onSearchClick: () => {

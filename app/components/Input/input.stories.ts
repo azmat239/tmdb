@@ -19,6 +19,6 @@ export const Hero_Input: Story = {
     onInputChange: () => {
       console.log("Changed The Text");
     },
-    // defaultValue: "Iron Man 4",
+    defaultValue: "Iron Man 4",
   },
 };

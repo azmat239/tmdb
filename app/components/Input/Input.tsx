@@ -6,17 +6,17 @@ import classNames from "classnames";
 const Input = ({
   placeholder,
   onInputChange,
-  // defaultValue,
+  defaultValue,
   extraClasses,
 }: InputType) => {
   let inputClass = classNames(
-    "h-[44px] w-[1220px] py-6 rounded-30 px-8 border-0 focus:outline-0"
+    "h-[44px] w-full py-6 rounded-30 px-8 border-0 focus:outline-0"
   );
   return (
     <input
       type="text"
       name="search"
-      // value={defaultValue}
+      defaultValue={defaultValue}
       onChange={onInputChange}
       placeholder={placeholder}
       className={`${inputClass} ${extraClasses ?? ""}`}
