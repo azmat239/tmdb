@@ -111,7 +111,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Header logo={logoValue} links={links} ActionIcon={BiSearchAlt2} />
-        <section>{children}</section>
+        <section className="mx-[65px]">{children}</section>
         <Footer menus={menus} logo={Footerlogo} />
       </body>
     </html>

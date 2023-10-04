@@ -10,7 +10,7 @@ const HeroSearchBar = ({
   extraClasses,
 }: HeroSearchBarType) => {
   const heroSearchBarClass = classNames(
-    "flex mx-10 mt-10 bg-white rounded-30 justify-between w-[1220px]"
+    "flex mx-10 mt-10 bg-white rounded-30 justify-between max-w-[1220px]"
   );
   return (
     <div className={`${heroSearchBarClass} ${extraClasses ?? ""}`}>
