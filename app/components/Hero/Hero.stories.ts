@@ -19,6 +19,5 @@ export const hero: Story = {
     description:
       "Millions of movies, TV shows and people to discover. Explore now.",
     bgImg: "HeroSection.svg",
-    // defaultValue: "Iron Man 4",
   },
 };
