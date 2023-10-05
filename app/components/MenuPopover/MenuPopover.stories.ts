@@ -1,28 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import MovieCard from "./MovieCard";
+import MenuPopover from "./MenuPopover";
 
 const meta = {
-  title: "Components/MovieCard",
-  component: MovieCard,
+  title: "Components/MenuPopover",
+  component: MenuPopover,
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof MovieCard>;
+} satisfies Meta<typeof MenuPopover>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Movie_Card: Story = {
+export const Menu_popover: Story = {
   args: {
-    image: {
-      imgSrc: "MovieImage.svg",
-      altText: "Not found",
-    },
-    rating: 80,
-    title: "The Good Doctor",
-    date: "Sep 25,2017",
-    MenuPopoverLinks: [
+    links: [
       {
         text: "Option 1",
         url: "https://www.google.com",
