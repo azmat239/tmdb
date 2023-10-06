@@ -10,7 +10,7 @@ const Input = ({
   extraClasses,
 }: InputType) => {
   let inputClass = classNames(
-    "h-[44px] w-full py-6 rounded-30 px-8 border-0 focus:outline-0"
+    "h-[44px] w-full py-6 rounded-30 px-6 border-0 focus:outline-0"
   );
   return (
     <input
