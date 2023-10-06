@@ -25,6 +25,9 @@ export default function Home() {
   const handleClick = () => {
     return alert("Image Clicked");
   };
+  const handleMenuClick = () => {
+    return alert("Menu Clicked");
+  };
   return (
     <main className="flex flex-col justify-center">
       <Hero
@@ -39,6 +42,7 @@ export default function Home() {
         date="Sep 27,2017"
         onClick={handleClick}
         MenuPopoverLinks={links}
+        onMenuClick={handleMenuClick}
       />
     </main>
   );

@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Rating_Card: Story = {
+export const Movie_Ratings: Story = {
   args: {
     value: 80,
     variant: "movie",

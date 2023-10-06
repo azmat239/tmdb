@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 export const Movie_Card: Story = {
   args: {
     image: {
-      imgSrc: "MovieImage.svg",
+      imgSrc: "https://placehold.jp/150x220.png",
       altText: "Not found",
     },
     rating: 80,
