@@ -15,7 +15,6 @@ const MovieCard = ({
   date,
   onClick,
   MenuPopoverLinks,
-  onMenuClick,
   extraClasses,
 }: MovieCardtypes) => {
   const MovieCardClass = classNames(
@@ -34,12 +33,11 @@ const MovieCard = ({
       <MenuPopover
         links={MenuPopoverLinks}
         extraClasses="absolute top-8 right-8"
-        onMenuClick={onMenuClick}
       />
       <Rating
         value={rating}
         variant="movie"
-        extraClasses="absolute top-[220px] left-8"
+        extraClasses="absolute top-[220px] left-6"
       />
       <div>
         <Text text={title} variant="16" extraClasses="font-bold" />

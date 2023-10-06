@@ -7,6 +7,5 @@ export type MovieCardtypes = {
   date: string;
   MenuPopoverLinks: Array<NavLinkType>;
   onClick?: React.MouseEventHandler;
-  onMenuClick?: React.MouseEventHandler;
   extraClasses?: string;
 };
