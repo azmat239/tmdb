@@ -22,8 +22,11 @@ export const Movie_Section: Story = {
     ],
     movieLists: [
       {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
-        title: "The Good Doctor",
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
+        title: "Meg 2:The Trench",
         date: "Sep 27,2017",
         onClick: () => {
           return alert("Image Clicked");
@@ -50,64 +53,11 @@ export const Movie_Section: Story = {
       },
 
       {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
-        title: "The Good Doctor",
-        date: "Sep 27,2017",
-        onClick: () => {
-          return alert("Image Clicked");
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
         },
-        MenuPopoverLinks: [
-          {
-            text: "Option 1",
-            url: "https://www.google.com",
-          },
-          {
-            text: "Option 2",
-            url: "https://www.google.com",
-          },
-          {
-            text: "Option 3",
-            url: "https://www.google.com",
-          },
-          {
-            text: "Option 4",
-            url: "https://www.google.com",
-          },
-        ],
-        rating: 70,
-      },
-
-      {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
-        title: "The Good Doctor",
-        date: "Sep 27,2017",
-        onClick: () => {
-          return alert("Image Clicked");
-        },
-        MenuPopoverLinks: [
-          {
-            text: "Option 1",
-            url: "https://www.google.com",
-          },
-          {
-            text: "Option 2",
-            url: "https://www.google.com",
-          },
-          {
-            text: "Option 3",
-            url: "https://www.google.com",
-          },
-          {
-            text: "Option 4",
-            url: "https://www.google.com",
-          },
-        ],
-        rating: 70,
-      },
-
-      {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
-        title: "The Good Doctor",
+        title: "Avatar The Way Of Water",
         date: "Sep 27,2017",
         onClick: () => {
           return alert("Image Clicked");
@@ -133,7 +83,10 @@ export const Movie_Section: Story = {
         rating: 70,
       },
       {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
         title: "The Amazing SpiderMan",
         date: "Sep 27,2017",
         onClick: () => {
@@ -160,8 +113,11 @@ export const Movie_Section: Story = {
         rating: 70,
       },
       {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
-        title: "Doctor Strange",
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
+        title: "War Of The Worlds:The Attack",
         date: "Sep 27,2017",
         onClick: () => {
           return alert("Image Clicked");
@@ -187,8 +143,41 @@ export const Movie_Section: Story = {
         rating: 70,
       },
       {
-        image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
-        title: "The Good Doctor",
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
+        title: "Guardian of the Galaxy Vol.3",
+        date: "Sep 27,2017",
+        onClick: () => {
+          return alert("Image Clicked");
+        },
+        MenuPopoverLinks: [
+          {
+            text: "Option 1",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 2",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 3",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 4",
+            url: "https://www.google.com",
+          },
+        ],
+        rating: 70,
+      },
+      {
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
+        title: "Guardian of the Galaxy Vol.3",
         date: "Sep 27,2017",
         onClick: () => {
           return alert("Image Clicked");
