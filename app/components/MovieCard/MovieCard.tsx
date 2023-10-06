@@ -17,9 +17,7 @@ const MovieCard = ({
   MenuPopoverLinks,
   extraClasses,
 }: MovieCardtypes) => {
-  const MovieCardClass = classNames(
-    "flex flex-col gap-6 justify-center px-4 relative my-4 w-[190px] h-[330px]"
-  );
+  const MovieCardClass = classNames(" px-2 relative w-[190px] h-[320px]");
   return (
     <div className={`${MovieCardClass} ${extraClasses ?? ""} `}>
       <Image
@@ -32,14 +30,14 @@ const MovieCard = ({
       />
       <MenuPopover
         links={MenuPopoverLinks}
-        extraClasses="absolute top-8 right-8"
+        extraClasses="absolute top-2 right-6"
       />
       <Rating
         value={rating}
         variant="movie"
-        extraClasses="absolute top-[220px] left-6"
+        extraClasses="absolute bottom-[26%] left-6"
       />
-      <div>
+      <div className="mt-4">
         <Text text={title} variant="16" extraClasses="font-bold" />
         <Text text={date} variant="16" />
       </div>
