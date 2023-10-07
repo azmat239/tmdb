@@ -33,7 +33,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 90,
   },
 
   {
@@ -61,7 +61,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 20,
   },
 
   {
@@ -89,7 +89,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 10,
   },
 
   {
@@ -117,7 +117,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 60,
   },
   {
     image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
@@ -144,7 +144,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 75,
   },
   {
     image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
@@ -171,7 +171,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 79,
   },
   {
     image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
@@ -198,7 +198,7 @@ let movieLists = [
         url: "https://www.google.com",
       },
     ],
-    rating: 70,
+    rating: 100,
   },
   {
     image: { imgSrc: "MovieImage.svg", altText: "Not Found" },

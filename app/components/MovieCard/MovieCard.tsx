@@ -37,7 +37,7 @@ const MovieCard = ({
         variant="movie"
         extraClasses="absolute bottom-[26%] left-6"
       />
-      <div className="mt-4">
+      <div className="mt-6">
         <Text text={title} variant="16" extraClasses="font-bold" />
         <Text text={date} variant="16" />
       </div>

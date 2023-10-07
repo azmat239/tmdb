@@ -26,6 +26,68 @@ export const Movie_Section: Story = {
           imgSrc: "https://placehold.jp/150x220.png",
           altText: "Not Found",
         },
+        title: "The Good Doctor",
+        date: "Sep 27,2017",
+        onClick: () => {
+          return alert("Image Clicked");
+        },
+        MenuPopoverLinks: [
+          {
+            text: "Option 1",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 2",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 3",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 4",
+            url: "https://www.google.com",
+          },
+        ],
+        rating: 90,
+      },
+
+      {
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
+        title: "Spider-Man: Across The Spider:Verse",
+        date: "Sep 27,2017",
+        onClick: () => {
+          return alert("Image Clicked");
+        },
+        MenuPopoverLinks: [
+          {
+            text: "Option 1",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 2",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 3",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 4",
+            url: "https://www.google.com",
+          },
+        ],
+        rating: 20,
+      },
+
+      {
+        image: {
+          imgSrc: "https://placehold.jp/150x220.png",
+          altText: "Not Found",
+        },
         title: "Meg 2:The Trench",
         date: "Sep 27,2017",
         onClick: () => {
@@ -49,7 +111,7 @@ export const Movie_Section: Story = {
             url: "https://www.google.com",
           },
         ],
-        rating: 70,
+        rating: 10,
       },
 
       {
@@ -80,7 +142,7 @@ export const Movie_Section: Story = {
             url: "https://www.google.com",
           },
         ],
-        rating: 70,
+        rating: 60,
       },
       {
         image: {
@@ -110,7 +172,7 @@ export const Movie_Section: Story = {
             url: "https://www.google.com",
           },
         ],
-        rating: 70,
+        rating: 75,
       },
       {
         image: {
@@ -140,7 +202,7 @@ export const Movie_Section: Story = {
             url: "https://www.google.com",
           },
         ],
-        rating: 70,
+        rating: 79,
       },
       {
         image: {
@@ -170,7 +232,7 @@ export const Movie_Section: Story = {
             url: "https://www.google.com",
           },
         ],
-        rating: 70,
+        rating: 100,
       },
       {
         image: {
