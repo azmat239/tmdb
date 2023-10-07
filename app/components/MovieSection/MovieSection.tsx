@@ -12,7 +12,7 @@ const MovieSection = ({
   movieLists,
   extraClasses,
 }: MovieSectionTypes) => {
-  const movieClass = classNames("flex flex-col mt-10");
+  const movieClass = classNames("flex flex-col mt-6");
   return (
     <div className={`${movieClass} ${extraClasses ?? ""}`}>
       <div className="flex gap-6 mx-4">
@@ -37,18 +37,19 @@ const MovieSection = ({
           </div>
         )}
       </div>
-      <div className="flex max-w-[1300px] my-6 overflow-auto">
+      <div className="flex my-6  hide-scrollbar overflow-x-auto">
         {movieLists.map((movieList, index) => {
           return (
-            <MovieCard
-              image={movieList.image}
-              rating={movieList.rating}
-              date={movieList.date}
-              onClick={movieList.onClick}
-              title={movieList.title}
-              MenuPopoverLinks={movieList.MenuPopoverLinks}
-              key={index}
-            />
+            <div key={index}>
+              <MovieCard
+                image={movieList.image}
+                rating={movieList.rating}
+                date={movieList.date}
+                onClick={movieList.onClick}
+                title={movieList.title}
+                MenuPopoverLinks={movieList.MenuPopoverLinks}
+              />
+            </div>
           );
         })}
       </div>

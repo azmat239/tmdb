@@ -200,6 +200,33 @@ let movieLists = [
     ],
     rating: 70,
   },
+  {
+    image: { imgSrc: "MovieImage.svg", altText: "Not Found" },
+    title: "Guardian of the Galaxy Vol.3",
+    date: "Sep 27,2017",
+    onClick: () => {
+      return alert("Image Clicked");
+    },
+    MenuPopoverLinks: [
+      {
+        text: "Option 1",
+        url: "https://www.google.com",
+      },
+      {
+        text: "Option 2",
+        url: "https://www.google.com",
+      },
+      {
+        text: "Option 3",
+        url: "https://www.google.com",
+      },
+      {
+        text: "Option 4",
+        url: "https://www.google.com",
+      },
+    ],
+    rating: 70,
+  },
 ];
 export default function Home() {
   const handleClick = () => {
