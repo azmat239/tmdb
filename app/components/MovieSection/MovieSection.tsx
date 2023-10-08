@@ -9,12 +9,12 @@ import Text from "../Text/Text";
 const MovieSection = ({
   title,
   tabs,
-  movieLists,
+  movieList,
   extraClasses,
 }: MovieSectionTypes) => {
-  const movieClass = classNames("flex flex-col mt-6");
+  const movieClasses = classNames("flex flex-col mt-6");
   return (
-    <div className={`${movieClass} ${extraClasses ?? ""}`}>
+    <div className={`${movieClasses} ${extraClasses ?? ""}`}>
       <div className="flex gap-6 mx-4">
         <Heading text={title} variant="24" extraClasses="font-bold" />
         {tabs && (
@@ -27,7 +27,7 @@ const MovieSection = ({
                   className="py-1 px-5 active:bg-darkBlue rounded-30 "
                 >
                   <Text
-                    text={tab.tabsName}
+                    text={tab.tabName}
                     variant="16"
                     extraClasses="active:text-transparent bg-clip-text active:bg-gradient-to-b active:from-lightGreen active:to-lightBlue font-semibold"
                   />
@@ -38,7 +38,7 @@ const MovieSection = ({
         )}
       </div>
       <div className="flex my-6  hide-scrollbar overflow-x-auto">
-        {movieLists.map((movieList, index) => {
+        {movieList.map((movieList, index) => {
           return (
             <div key={index}>
               <MovieCard

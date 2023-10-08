@@ -2,7 +2,7 @@ import { MovieCardtypes } from "../MovieCard/MovieCard.types";
 
 export type MovieSectionTypes = {
   title: string;
-  tabs?: Array<{ tabsName: string; onClick?: React.MouseEventHandler }>;
-  movieLists: Array<MovieCardtypes>;
+  tabs?: Array<{ tabName: string; onClick?: React.MouseEventHandler }>;
+  movieList: Array<MovieCardtypes>;
   extraClasses?: string;
 };

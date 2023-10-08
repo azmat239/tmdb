@@ -17,10 +17,10 @@ export const Movie_Section: Story = {
   args: {
     title: "Trending",
     tabs: [
-      { tabsName: "Today", onClick: () => console.log("Today") },
-      { tabsName: "This Week", onClick: () => console.log("Today") },
+      { tabName: "Today", onClick: () => console.log("Today") },
+      { tabName: "This Week", onClick: () => console.log("Today") },
     ],
-    movieLists: [
+    movieList: [
       {
         image: {
           imgSrc: "https://placehold.jp/150x220.png",

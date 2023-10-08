@@ -3,8 +3,8 @@ import Hero from "./components/Hero/Hero";
 import MovieSection from "./components/MovieSection/MovieSection";
 
 let tabs = [
-  { tabsName: "Today", onClick: () => console.log("Today") },
-  { tabsName: "This Week", onClick: () => console.log("Today") },
+  { tabName: "Today", onClick: () => console.log("Today") },
+  { tabName: "This Week", onClick: () => console.log("Today") },
 ];
 
 let movieLists = [
@@ -239,8 +239,8 @@ export default function Home() {
         description="Millions of movies, TV shows and people to discover. Explore Now."
         bgImg="https://picsum.photos/200"
       />
-      <MovieSection title="Trending" tabs={tabs} movieLists={movieLists} />
-      <MovieSection title="What's Popular" movieLists={movieLists} />
+      <MovieSection title="Trending" tabs={tabs} movieList={movieLists} />
+      <MovieSection title="What's Popular" movieList={movieLists} />
     </main>
   );
 }
