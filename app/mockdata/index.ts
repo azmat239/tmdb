@@ -10,18 +10,78 @@ export const links: NavLinkType[] = [
   {
     text: "Movies",
     url: "/movies",
+    subLinks: [
+      {
+        text: "Popular",
+        url: "/popular",
+      },
+      {
+        text: "Now Playing",
+        url: "/playing",
+      },
+      {
+        text: "Upcoming",
+        url: "/upcoming",
+      },
+      {
+        text: "Top Rated",
+        url: "/rated",
+      },
+    ],
   },
   {
     text: "Tv Shows",
     url: "/tv",
+    subLinks: [
+      {
+        text: "Popular",
+        url: "/home",
+      },
+      {
+        text: "Airing Today",
+        url: "/tv",
+      },
+      {
+        text: "On Tv",
+        url: "/people",
+      },
+      {
+        text: "Top Rated",
+        url: "/more",
+      },
+    ],
   },
   {
     text: "People",
     url: "/people",
+    subLinks: [
+      {
+        text: "Popular People",
+        url: "/popular",
+      },
+    ],
   },
   {
     text: "more",
     url: "/more",
+    subLinks: [
+      {
+        text: "Discusion",
+        url: "/discussion",
+      },
+      {
+        text: "Leaderboard",
+        url: "/leadernoard",
+      },
+      {
+        text: "API",
+        url: "/Api",
+      },
+      {
+        text: "Support",
+        url: "/Support",
+      },
+    ],
   },
 ];
 

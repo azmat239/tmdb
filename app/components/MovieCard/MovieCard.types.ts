@@ -5,7 +5,7 @@ export type MovieCardtypes = {
   rating: number;
   title: string;
   date: string;
-  MenuPopoverLinks: Array<NavLinkType>;
+  MenuPopoverLinks: Array<{ text: string; url: string }>;
   onClick?: React.MouseEventHandler;
   extraClasses?: string;
 };
