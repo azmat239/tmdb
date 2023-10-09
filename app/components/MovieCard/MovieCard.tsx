@@ -30,12 +30,12 @@ const MovieCard = ({
       />
       <MenuPopover
         links={MenuPopoverLinks}
-        extraClasses="absolute top-2 right-4"
+        extraClasses="absolute top-1.5 right-4"
       />
       <Rating
         value={rating}
         variant="movie"
-        extraClasses="absolute bottom-[26%] left-6"
+        extraClasses="absolute bottom-[28%] left-6"
       />
       <div className="mt-6">
         <Text text={title} variant="16" extraClasses="font-bold" />

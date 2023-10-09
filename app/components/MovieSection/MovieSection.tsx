@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { MovieSectionTypes } from "./MovieSection.types";
 import Heading from "../Heading/Heading";
 import classNames from "classnames";
 import MovieCard from "../MovieCard/MovieCard";
-import Text from "../Text/Text";
 
 const MovieSection = ({
   title,
@@ -13,6 +12,10 @@ const MovieSection = ({
   extraClasses,
 }: MovieSectionTypes) => {
   const movieClasses = classNames("flex flex-col mt-6");
+  const [activeTab, setActiveTab] = useState(0);
+  const tabButtonClasses = classNames(
+    "py-1 px-5  rounded-30 data-[isactive=true]:bg-darkBlue data-[isactive=true]:text-lightGreen font-semibold"
+  );
   return (
     <div className={`${movieClasses} ${extraClasses ?? ""}`}>
       <div className="flex gap-6 mx-4">
@@ -23,21 +26,18 @@ const MovieSection = ({
               return (
                 <button
                   key={index}
-                  onClick={tab.onClick}
-                  className="py-1 px-5 active:bg-darkBlue rounded-30 "
+                  onClick={() => setActiveTab(index)}
+                  className={tabButtonClasses}
+                  data-isActive={activeTab == index}
                 >
-                  <Text
-                    text={tab.tabName}
-                    variant="16"
-                    extraClasses="active:text-transparent bg-clip-text active:bg-gradient-to-b active:from-lightGreen active:to-lightBlue font-semibold"
-                  />
+                  {tab.tabName}
                 </button>
               );
             })}
           </div>
         )}
       </div>
-      <div className="flex my-6  hide-scrollbar overflow-x-auto">
+      <div className="flex my-6  hide-scrollbar overflow-x-auto shadow-insetWhite">
         {movieList.map((movieList, index) => {
           return (
             <div key={index}>

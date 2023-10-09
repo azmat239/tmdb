@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import HeroSearchBar from "./HeroSearchBar";
+import { inputProps } from "../../mockdata";
 
 const meta = {
   title: "Components/HeroSearchBar",
@@ -15,13 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Hero_Search_Bar: Story = {
   args: {
-    inputProps: {
-      placeholder: "Search for a Movie, Tv Shows or People ....",
-      onInputChange: () => {
-        console.log("Changed The Text");
-      },
-      defaultValue: "Iron Man 4",
-    },
+    inputProps: inputProps,
 
     onSearchClick: () => {
       alert(".... Searching ....");

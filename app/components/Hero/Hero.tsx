@@ -4,15 +4,9 @@ import { HeroType } from "./Hero.types";
 import Heading from "../Heading/Heading";
 import HeroSearchBar from "../HeroSearchBar/HeroSearchBar";
 import classNames from "classnames";
+import { inputProps } from "../../mockdata";
 
 const Hero = ({ title, description, bgImg, extraClasses }: HeroType) => {
-  let inputProps = {
-    placeholder: "Search for a Movie, Tv Shows or People ....",
-    onInputChange: () => {
-      console.log("Changed The Text");
-    },
-    defaultValue: "Iron Man 4",
-  };
   const heroClass = classNames("py-16 ");
   return (
     <div
