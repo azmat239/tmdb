@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import MovieCard from "./MovieCard";
+import { movieLists } from "../../mockdata";
 
 const meta = {
   title: "Components/MovieCard",
@@ -14,31 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Movie_Card: Story = {
-  args: {
-    image: {
-      imgSrc: "https://placehold.jp/150x220.png",
-      altText: "Not found",
-    },
-    rating: 80,
-    title: "The Good Doctor",
-    date: "Sep 25,2017",
-    MenuPopoverLinks: [
-      {
-        text: "Option 1",
-        url: "https://www.google.com",
-      },
-      {
-        text: "Option 2",
-        url: "https://www.google.com",
-      },
-      {
-        text: "Option 3",
-        url: "https://www.google.com",
-      },
-      {
-        text: "Option 4",
-        url: "https://www.google.com",
-      },
-    ],
-  },
+  args: movieLists[0],
 };

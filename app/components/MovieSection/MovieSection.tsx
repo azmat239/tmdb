@@ -28,7 +28,7 @@ const MovieSection = ({
                   key={index}
                   onClick={() => setActiveTab(index)}
                   className={tabButtonClasses}
-                  data-isActive={activeTab == index}
+                  data-isactive={activeTab == index}
                 >
                   {tab.tabName}
                 </button>

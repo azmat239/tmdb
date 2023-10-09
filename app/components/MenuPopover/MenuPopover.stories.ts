@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import MenuPopover from "./MenuPopover";
-import { links } from "../../mockdata";
+import { movieLists } from "../../mockdata";
 
 const meta = {
   title: "Components/MenuPopover",
@@ -15,7 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Menu_popover: Story = {
-  args: {
-    links: links,
-  },
+  args: { links: movieLists[0].MenuPopoverLinks },
 };

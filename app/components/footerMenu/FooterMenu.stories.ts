@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import FooterMenu from "./FooterMenu";
-import { links } from "../../mockdata";
+import { links, menus } from "../../mockdata";
 
 const meta = {
   title: "Components/footerMenu",
@@ -15,8 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const footer_Menu: Story = {
-  args: {
-    title: "THE BASICS",
-    links: links,
-  },
+  args: menus[0],
 };

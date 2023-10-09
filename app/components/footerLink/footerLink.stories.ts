@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import footerLink from "./footerLink";
+import { links, menus } from "../../mockdata";
 
 const meta = {
   title: "Components/footerLink",
@@ -14,9 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const footer_Link: Story = {
-  args: {
-    text: "AboutTMDB",
-    url: "/",
-    extraClasses: "",
-  },
+  args: menus[0].links[0],
 };

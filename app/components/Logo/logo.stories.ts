@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Logo from "./Logo";
+import { logoValue } from "../../mockdata";
 
 const meta = {
   title: "Components/Logo",
@@ -14,10 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Logo_svg: Story = {
-  args: {
-    imgSrc: "https://placehold.jp/150x20.png",
-    url: "/",
-    altText: "nothing",
-    extraClasses: "",
-  },
+  args: logoValue,
 };
