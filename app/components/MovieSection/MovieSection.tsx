@@ -37,7 +37,7 @@ const MovieSection = ({
           </div>
         )}
       </div>
-      <div className="flex my-6  hide-scrollbar overflow-x-auto shadow-insetWhite">
+      <div className="flex my-6 hide-scrollbar overflow-x-auto shadow-insetWhite overflow-y-hidden">
         {movieList.map((movieList, index) => {
           return (
             <div key={index}>
