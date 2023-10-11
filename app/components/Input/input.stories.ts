@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Input from "./Input";
+import { inputProps } from "../../mockdata";
 
 const meta = {
   title: "Components/Input",
@@ -14,11 +15,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Hero_Input: Story = {
-  args: {
-    placeholder: "Search for a Movie, Tv Shows or People ....",
-    onInputChange: () => {
-      console.log("Changed The Text");
-    },
-    defaultValue: "Iron Man 4",
-  },
+  args: inputProps,
 };

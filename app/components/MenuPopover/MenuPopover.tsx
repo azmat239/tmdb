@@ -5,7 +5,9 @@ import { MenuPopoverType } from "./MenuPopover.types";
 import Link from "next/link";
 import classNames from "classnames";
 
-const popoverClass = classNames("bg-slate-50 hover:bg-slate-300 rounded-30 ");
+const popoverClass = classNames(
+  "bg-slate-200 hover:bg-lightBlue h-5 w-5 flex justify-center items-center rounded-30"
+);
 const MenuPopover = ({ links, extraClasses }: MenuPopoverType) => (
   <Popover.Root>
     <Popover.Trigger asChild>

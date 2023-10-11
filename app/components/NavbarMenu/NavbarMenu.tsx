@@ -10,7 +10,12 @@ const NavbarMenu = ({ links, extraClasses }: navbarMenutype) => {
       {links.map((links, index) => {
         return (
           <li key={index}>
-            <NavLink text={links.text} url={links.url} />
+            <NavLink
+              text={links.text}
+              url={links.url}
+              variant="Link"
+              subLinks={links.subLinks}
+            />
           </li>
         );
       })}

@@ -1,25 +1,7 @@
 "use client";
 import Hero from "./components/Hero/Hero";
-import MovieCard from "./components/MovieCard/MovieCard";
-
-let links = [
-  {
-    text: "Option 1",
-    url: "https://www.google.com",
-  },
-  {
-    text: "Option 2",
-    url: "https://www.google.com",
-  },
-  {
-    text: "Option 3",
-    url: "https://www.google.com",
-  },
-  {
-    text: "Option 4",
-    url: "https://www.google.com",
-  },
-];
+import MovieSection from "./components/MovieSection/MovieSection";
+import { movieLists, tabs } from "./mockdata";
 
 export default function Home() {
   const handleClick = () => {
@@ -32,14 +14,8 @@ export default function Home() {
         description="Millions of movies, TV shows and people to discover. Explore Now."
         bgImg="https://picsum.photos/200"
       />
-      <MovieCard
-        image={{ imgSrc: "MovieImage.svg", altText: "Not Found" }}
-        rating={70}
-        title="The Good Doctor"
-        date="Sep 27,2017"
-        onClick={handleClick}
-        MenuPopoverLinks={links}
-      />
+      <MovieSection title="Trending" tabs={tabs} movieList={movieLists} />
+      <MovieSection title="What's Popular" movieList={movieLists} />
     </main>
   );
 }
