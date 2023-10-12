@@ -17,7 +17,7 @@ const MovieCard = ({
   MenuPopoverLinks,
   extraClasses,
 }: MovieCardtypes) => {
-  const MovieCardClass = classNames("px-2 relative w-[160px] h-[320px]");
+  const MovieCardClass = classNames("px-2 relative w-[160px] h-[380px]");
   return (
     <div className={`${MovieCardClass} ${extraClasses ?? ""} `}>
       <Image
@@ -35,7 +35,7 @@ const MovieCard = ({
       <Rating
         value={rating}
         variant="movie"
-        extraClasses="absolute bottom-[28%] left-6"
+        extraClasses="absolute bottom-[38%] left-6"
       />
       <div className="mt-6">
         <Text text={title} variant="16" extraClasses="font-bold" />
