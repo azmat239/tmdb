@@ -28,7 +28,6 @@ const MovieSection = ({
                   key={index}
                   onClick={() => {
                     setActiveTab(index);
-                    //@ts-ignore
                     tab.onClick();
                   }}
                   className={tabButtonClasses}
@@ -50,7 +49,7 @@ const MovieSection = ({
                   image={movieList.image}
                   rating={movieList.rating}
                   date={movieList.date}
-                  onClick={movieList.onClick}
+                  url={movieList.url}
                   title={movieList.title}
                   MenuPopoverLinks={movieList.MenuPopoverLinks}
                 />

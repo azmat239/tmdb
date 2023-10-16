@@ -17,7 +17,6 @@ const HeroSearchBar = ({
       <Input
         placeholder={inputProps.placeholder}
         onInputChange={inputProps.onInputChange}
-        defaultValue={inputProps.defaultValue}
       />
 
       <Button text="Search" variant="hero-section" onClick={onSearchClick} />

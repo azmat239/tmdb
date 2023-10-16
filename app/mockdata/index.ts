@@ -389,5 +389,4 @@ export let inputProps: InputType = {
   onInputChange: () => {
     console.log("Changed The Text");
   },
-  defaultValue: "Iron Man 4",
 };

@@ -8,88 +8,65 @@ import { useState } from "react";
 
 export default function Home() {
   const [timeWindow, setTimeWindow] = useState<"day" | "week">("day");
-  const { data: popularData, error: popularError } = useSWR(
-    `${baseApiUrl}/3/movie/popular?api_key=${apiKey}`,
-    fetcher
-  );
-  const { data: trendingData, error: trendingError } = useSWR(
-    `${baseApiUrl}/3/trending/movie/${timeWindow}?api_key=945747413f8ed82865430ae895bdf874`,
+  const {
+    data: popularData,
+    error: popularError,
+    isLoading: popularIsLoading,
+  } = useSWR(`${baseApiUrl}/3/movie/popular?api_key=${apiKey}`, fetcher);
+  const {
+    data: trendingData,
+    error: trendingError,
+    isLoading: trendingIsLoading,
+  } = useSWR(
+    `${baseApiUrl}/3/trending/movie/${timeWindow}?api_key=${apiKey}`,
     fetcher
   );
 
-  if (!popularData && !popularError) {
+  if (popularIsLoading || trendingIsLoading) {
     return <div>...Loading...</div>;
   }
 
   if (popularError) {
     return <div>Error: {popularError.message || "An error occurred"}</div>;
   }
-  const popularMovies = popularData.results.map((movie: any) => {
-    return {
-      image: {
-        imgSrc: `${imgUrl}${movie.poster_path}`,
-        altText: "Image Not Found",
-      },
-      title: movie.title,
-      date: movie.release_date,
-      rating: Math.floor(movie.vote_average * 10),
-      MenuPopoverLinks: [
-        {
-          text: "Option 1",
-          url: "https://www.google.com",
-        },
-        {
-          text: "Option 2",
-          url: "https://www.google.com",
-        },
-        {
-          text: "Option 3",
-          url: "https://www.google.com",
-        },
-        {
-          text: "Option 4",
-          url: "https://www.google.com",
-        },
-      ],
-    };
-  });
-
-  if (!trendingData && !trendingError) {
-    return <div>...Loading...</div>;
-  }
-
   if (trendingError) {
     return <div>Error: {trendingError.message || "An error occurred"}</div>;
   }
-  const trendingMovies = trendingData.results.map((movie: any) => {
-    return {
-      image: {
-        imgSrc: `${imgUrl}${movie.poster_path}`,
-        altText: "Image Not Found",
-      },
-      title: movie.title,
-      date: movie.release_date,
-      rating: Math.floor(movie.vote_average * 10),
-      MenuPopoverLinks: [
-        {
-          text: "Option 1",
-          url: "https://www.google.com",
+
+  const getFormattedMovies = (movies: any) =>
+    movies.map((movie: any) => {
+      return {
+        image: {
+          imgSrc: `${imgUrl}${movie.poster_path}`,
+          altText: "Image Not Found",
+          url: "/",
         },
-        {
-          text: "Option 2",
-          url: "https://www.google.com",
-        },
-        {
-          text: "Option 3",
-          url: "https://www.google.com",
-        },
-        {
-          text: "Option 4",
-          url: "https://www.google.com",
-        },
-      ],
-    };
-  });
+        title: movie.title,
+        date: movie.release_date,
+        rating: Math.floor(movie.vote_average * 10),
+        url: "/",
+        MenuPopoverLinks: [
+          {
+            text: "Option 1",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 2",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 3",
+            url: "https://www.google.com",
+          },
+          {
+            text: "Option 4",
+            url: "https://www.google.com",
+          },
+        ],
+      };
+    });
+  const trendingMovies = getFormattedMovies(trendingData.results);
+  const popularMovies = getFormattedMovies(popularData.results);
 
   let tabs = [
     { tabName: "Today", onClick: () => setTimeWindow("day") },

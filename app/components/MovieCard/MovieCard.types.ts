@@ -6,6 +6,6 @@ export type MovieCardtypes = {
   title: string;
   date: string;
   MenuPopoverLinks: Array<{ text: string; url: string }>;
-  onClick?: React.MouseEventHandler;
+  url: string;
   extraClasses?: string;
 };
