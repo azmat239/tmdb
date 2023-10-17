@@ -40,7 +40,7 @@ const MovieCard = ({
         extraClasses="absolute bottom-[36%] left-6"
       />
       <div className="mt-6">
-        <Link href="/movies">
+        <Link href={url}>
           <Text
             text={title}
             variant="16"

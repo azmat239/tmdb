@@ -5,3 +5,4 @@ export const fetcher = (
 export const baseApiUrl = "https://api.themoviedb.org";
 export const apiKey = "945747413f8ed82865430ae895bdf874";
 export const imgUrl = "https://image.tmdb.org/t/p/original";
+export const movieLink = "https://www.themoviedb.org/movie/";

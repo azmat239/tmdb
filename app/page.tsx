@@ -3,7 +3,7 @@ import useSWR from "swr";
 import Hero from "./components/Hero/Hero";
 import MovieSection from "./components/MovieSection/MovieSection";
 import { movieLists } from "./mockdata";
-import { apiKey, baseApiUrl, fetcher, imgUrl } from "./api";
+import { apiKey, baseApiUrl, fetcher, imgUrl, movieLink } from "./api";
 import { useState } from "react";
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
         title: movie.title,
         date: movie.release_date,
         rating: Math.floor(movie.vote_average * 10),
-        url: "/",
+        url: `${movieLink}${movie.id}`,
         MenuPopoverLinks: [
           {
             text: "Option 1",
