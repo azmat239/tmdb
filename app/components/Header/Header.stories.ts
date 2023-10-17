@@ -19,6 +19,5 @@ export const Headers: Story = {
   args: {
     logo: logoValue,
     links: links,
-    ActionIcon: BiSearchAlt2,
   },
 };

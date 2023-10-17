@@ -1,5 +1,6 @@
 import React from "react";
 import { GlobalSearchInputType } from "./GlobalSearchInput.types";
+import classNames from "classnames";
 
 const GlobalSearchInput = ({
   ActionIcon,
@@ -8,15 +9,18 @@ const GlobalSearchInput = ({
   defaultValue,
   extraClasses,
 }: GlobalSearchInputType) => {
+  const GlobalInputClasses = classNames(
+    "flex gap-2 bg-white items-center h-10 p-6"
+  );
   return (
-    <div className="flex gap-2 bg-white items-center h-10 w-[1220px] p-4">
+    <div className={`${GlobalInputClasses} ${extraClasses ?? ""}`}>
       <ActionIcon className="text-lg mt-1" />
       <input
         type="search"
         onChange={onInputChange}
         defaultValue={defaultValue}
         placeholder={placeholder}
-        className="focus:outline-0 min-w-[1150px] text-gray"
+        className="focus:outline-0 min-w-[1120px] text-gray"
       />
     </div>
   );
