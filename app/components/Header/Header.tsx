@@ -10,11 +10,17 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Header = ({ logo, links, extraClasses }: HeaderType) => {
-  const [searchDisplay, setSearchDisplay] = useState("hidden");
+  const [searchDisplay, setSearchDisplay] = useState<"hidden" | "block">(
+    "hidden"
+  );
   const IconDisplay = searchDisplay == "hidden" ? BiSearchAlt2 : AiOutlineClose;
-  let HeaderClass = classNames(
+  const HeaderClass = classNames(
     "flex justify-evenly  bg-darkBlue py-4 relative"
   );
+  const iconClasses = classNames("text-[21px]", {
+    "text-lightBlue": searchDisplay == "hidden",
+    "text-white ": searchDisplay == "block",
+  });
   const SearchInputClasses = classNames("absolute top-[68px]");
   return (
     <header className={`${HeaderClass} ${extraClasses ?? ""}`}>
@@ -30,7 +36,7 @@ const Header = ({ logo, links, extraClasses }: HeaderType) => {
             : setSearchDisplay("block");
         }}
       >
-        <IconDisplay className="text-lightBlue" />
+        <IconDisplay className={`${iconClasses}`} />
       </button>
 
       <GlobalSearchInput
