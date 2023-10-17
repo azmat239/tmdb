@@ -384,15 +384,9 @@ export let movieLists: MovieCardtypes[] = [
   },
 ];
 
-export let tabs: MovieSectionTypes["tabs"] = [
-  { tabName: "Today", onClick: () => console.log("Today") },
-  { tabName: "This Week", onClick: () => console.log("Today") },
-];
-
 export let inputProps: InputType = {
   placeholder: "Search for a Movie, Tv Shows or People ....",
   onInputChange: () => {
     console.log("Changed The Text");
   },
-  defaultValue: "Iron Man 4",
 };

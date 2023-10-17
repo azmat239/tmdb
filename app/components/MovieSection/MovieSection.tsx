@@ -14,7 +14,7 @@ const MovieSection = ({
   const movieClasses = classNames("flex flex-col mt-6");
   const [activeTab, setActiveTab] = useState(0);
   const tabButtonClasses = classNames(
-    "py-1 px-5  rounded-30 data-[isactive=true]:bg-darkBlue data-[isactive=true]:text-lightGreen font-semibold"
+    "py-1 px-5  rounded-30 data-[isactive=true]:bg-darkBlue data-[isactive=true]:text-lightGreen font-semibold max-w-[1300px]"
   );
   return (
     <div className={`${movieClasses} ${extraClasses ?? ""}`}>
@@ -26,7 +26,10 @@ const MovieSection = ({
               return (
                 <button
                   key={index}
-                  onClick={() => setActiveTab(index)}
+                  onClick={() => {
+                    setActiveTab(index);
+                    tab.onClick();
+                  }}
                   className={tabButtonClasses}
                   data-isactive={activeTab == index}
                 >
@@ -37,21 +40,25 @@ const MovieSection = ({
           </div>
         )}
       </div>
-      <div className="flex my-6 hide-scrollbar overflow-x-auto shadow-insetWhite overflow-y-hidden">
-        {movieList.map((movieList, index) => {
-          return (
-            <div key={index}>
-              <MovieCard
-                image={movieList.image}
-                rating={movieList.rating}
-                date={movieList.date}
-                onClick={movieList.onClick}
-                title={movieList.title}
-                MenuPopoverLinks={movieList.MenuPopoverLinks}
-              />
-            </div>
-          );
-        })}
+      <div className="my-6 relative">
+        <div className="flex  hide-scrollbar overflow-x-auto overflow-y-hidden  ">
+          {movieList.map((movieList, index) => {
+            return (
+              <div key={index}>
+                <MovieCard
+                  image={movieList.image}
+                  rating={movieList.rating}
+                  date={movieList.date}
+                  url={movieList.url}
+                  title={movieList.title}
+                  MenuPopoverLinks={movieList.MenuPopoverLinks}
+                />
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="absolute bg-gradient-to-l from-white  to-transparent right-0 w-10 inset-y-0 "></div>
       </div>
     </div>
   );
