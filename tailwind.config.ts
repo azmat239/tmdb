@@ -26,6 +26,7 @@ const config: Config = {
         lightGrey: "#E4E4E4",
         lightBlack: "#081C22",
         lightGreen: "#1ED5A9",
+        gray: "#acacac",
       },
     },
     borderRadius: {
