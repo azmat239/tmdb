@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { HeaderType } from "./Header.types";
 import NavbarMenu from "../NavbarMenu/NavbarMenu";
 import GlobalSearchInput from "../GlobalSearchInput/GlobalSearchInput";
-import { inputProps } from "@/app/mockdata";
+import { inputProps } from "../../mockdata";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 

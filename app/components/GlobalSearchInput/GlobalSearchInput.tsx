@@ -10,7 +10,7 @@ const GlobalSearchInput = ({
   extraClasses,
 }: GlobalSearchInputType) => {
   const GlobalInputClasses = classNames(
-    "flex gap-2 bg-white items-center h-10 p-6"
+    "flex gap-2 bg-white items-center h-10 max-w-[1440px] py-6 px-20 border-y-[1px] border-black"
   );
   return (
     <div className={`${GlobalInputClasses} ${extraClasses ?? ""}`}>
@@ -20,7 +20,7 @@ const GlobalSearchInput = ({
         onChange={onInputChange}
         defaultValue={defaultValue}
         placeholder={placeholder}
-        className="focus:outline-0 min-w-[1120px] text-gray"
+        className="focus:outline-0 text-gray min-w-[1125px]"
       />
     </div>
   );

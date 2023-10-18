@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BiSearchAlt2 } from "react-icons/bi";
 import Header from "./Header";
 import { links, logoValue } from "../../mockdata";
 
