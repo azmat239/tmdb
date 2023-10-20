@@ -5,6 +5,7 @@ import MovieSection from "./components/MovieSection/MovieSection";
 import { movieLists } from "./mockdata";
 import { apiKey, baseApiUrl, fetcher, imgUrl, movieLink } from "./api";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [timeWindow, setTimeWindow] = useState<"day" | "week">("day");

@@ -6,7 +6,7 @@ import Text from "../Text/Text";
 
 const SearchMovieCards = ({ lists, extraClasses }: SearchMovieCardsType) => {
   const searchMovieCardClasses = classNames(
-    "flex gap-3 w-[1020px] m-4 rounded-8 border-[1px] border-lightGrey shadow-md"
+    "flex gap-3 mb-4 max-w-[1020px] h-[140px] rounded-8 border-[1px] border-lightGrey shadow-md"
   );
   return (
     <div>
@@ -17,13 +17,13 @@ const SearchMovieCards = ({ lists, extraClasses }: SearchMovieCardsType) => {
             className={`${searchMovieCardClasses} ${extraClasses ?? ""}`}
           >
             <Image
-              src={list.searchImage.imgSrc}
+              src="MovieImage.svg"
               width={95}
               height={140}
               alt={list.searchImage.imgSrc}
-              className="min-w-94px rounded-s-8"
+              className=" rounded-s-8"
             />
-            <div className="py-5 px-4 flex flex-col gap-4">
+            <div className="py-5 px-4 flex flex-col gap-2">
               <div>
                 <Text
                   text={list.title}

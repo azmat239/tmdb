@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 const SearchSideBar = ({ heading, items, extraClasses }: SearchSideBarType) => {
   const searchSideBarClasses = classNames(
-    "flex flex-col w-[280px] rounded-8 border-[1px] border-lightGrey"
+    "flex flex-col min-w-[280px] max-h-[420px] rounded-8 border-[1px] border-lightGrey"
   );
   return (
     <div className={`${searchSideBarClasses} ${extraClasses ?? ""} `}>

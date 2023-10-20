@@ -22,6 +22,7 @@ const Header = ({ logo, links, extraClasses }: HeaderType) => {
     "text-white ": searchDisplay == "block",
   });
   const SearchInputClasses = classNames("absolute top-[68px]");
+
   return (
     <header className={`${HeaderClass} ${extraClasses ?? ""}`}>
       <div className="flex gap-2">
@@ -42,7 +43,6 @@ const Header = ({ logo, links, extraClasses }: HeaderType) => {
       <GlobalSearchInput
         ActionIcon={BiSearchAlt2}
         placeholder={inputProps.placeholder}
-        onInputChange={inputProps.onInputChange}
         extraClasses={`${searchDisplay} ${SearchInputClasses}`}
       />
     </header>

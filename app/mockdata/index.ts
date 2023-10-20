@@ -383,7 +383,7 @@ export let inputProps: InputType = {
   },
 };
 
-export const Items: SearchSideBarType["items"] = [
+export const items: SearchSideBarType["items"] = [
   {
     text: "Movies",
     badgeNumber: 1666,
@@ -422,6 +422,46 @@ export const Items: SearchSideBarType["items"] = [
 ];
 
 export const listsResult: SearchMovieCardsType["lists"] = [
+  {
+    searchImage: {
+      imgSrc: "https://placehold.jp/95x150.png",
+      altText: "not found",
+    },
+    title: "Meg 2: The Trench",
+    date: "August 4, 2023",
+    description:
+      "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+  },
+  {
+    searchImage: {
+      imgSrc: "https://placehold.jp/95x150.png",
+      altText: "not found",
+    },
+    title: "Meg 2: The Trench",
+    date: "August 4, 2023",
+    description:
+      "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+  },
+  {
+    searchImage: {
+      imgSrc: "https://placehold.jp/95x150.png",
+      altText: "not found",
+    },
+    title: "Meg 2: The Trench",
+    date: "August 4, 2023",
+    description:
+      "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+  },
+  {
+    searchImage: {
+      imgSrc: "https://placehold.jp/95x150.png",
+      altText: "not found",
+    },
+    title: "Meg 2: The Trench",
+    date: "August 4, 2023",
+    description:
+      "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+  },
   {
     searchImage: {
       imgSrc: "https://placehold.jp/95x150.png",
