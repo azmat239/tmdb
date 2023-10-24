@@ -1,10 +1,9 @@
 import { InputType } from "../components/Input/input.types";
 import { LogoType } from "../components/Logo/Logo.type";
 import { MovieCardtypes } from "../components/MovieCard/MovieCard.types";
-import { MovieSectionTypes } from "../components/MovieSection/MovieSection.types";
 import { NavLinkType } from "../components/NavLink/NavLink.types";
-import { SearchMovieCardsType } from "../components/SearchMovie/SearchMovieCardList.types";
-import { SearchSideBarType } from "../components/SearchSideBar/SearchSideBar.types";
+import { SearchMovieCardListType } from "../components/SearchMovie/SearchMovieCardList.types";
+import { SearchMovieCardType } from "../components/SearchMovieCard/SearchMovieCard.types";
 import { footerLogoType } from "../components/footerLogo/footerLogo.type";
 import { FooterMenuType } from "../components/footerMenu/FooterMenu.types";
 
@@ -383,9 +382,9 @@ export let inputProps: InputType = {
   },
 };
 
-export const listsResult: SearchMovieCardsType["lists"] = [
+export const listsResult: SearchMovieCardType[] = [
   {
-    searchImage: {
+    image: {
       imgSrc: "https://placehold.jp/95x150.png",
       altText: "not found",
     },
@@ -393,9 +392,11 @@ export const listsResult: SearchMovieCardsType["lists"] = [
     date: "August 4, 2023",
     description:
       "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+    url: "/",
+    variant: "company",
   },
   {
-    searchImage: {
+    image: {
       imgSrc: "https://placehold.jp/95x150.png",
       altText: "not found",
     },
@@ -403,9 +404,11 @@ export const listsResult: SearchMovieCardsType["lists"] = [
     date: "August 4, 2023",
     description:
       "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+    url: "/",
+    variant: "company",
   },
   {
-    searchImage: {
+    image: {
       imgSrc: "https://placehold.jp/95x150.png",
       altText: "not found",
     },
@@ -413,9 +416,11 @@ export const listsResult: SearchMovieCardsType["lists"] = [
     date: "August 4, 2023",
     description:
       "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+    url: "/",
+    variant: "company",
   },
   {
-    searchImage: {
+    image: {
       imgSrc: "https://placehold.jp/95x150.png",
       altText: "not found",
     },
@@ -423,9 +428,11 @@ export const listsResult: SearchMovieCardsType["lists"] = [
     date: "August 4, 2023",
     description:
       "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+    url: "/",
+    variant: "company",
   },
   {
-    searchImage: {
+    image: {
       imgSrc: "https://placehold.jp/95x150.png",
       altText: "not found",
     },
@@ -433,9 +440,11 @@ export const listsResult: SearchMovieCardsType["lists"] = [
     date: "August 4, 2023",
     description:
       "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+    url: "/",
+    variant: "others",
   },
   {
-    searchImage: {
+    image: {
       imgSrc: "https://placehold.jp/95x150.png",
       altText: "not found",
     },
@@ -443,5 +452,7 @@ export const listsResult: SearchMovieCardsType["lists"] = [
     date: "August 4, 2023",
     description:
       "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
+    url: "/",
+    variant: "company",
   },
 ];

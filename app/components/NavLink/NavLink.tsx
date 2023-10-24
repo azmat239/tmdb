@@ -21,7 +21,7 @@ const NavLink = ({
       <Link href={url}>
         <Text text={text} variant="14" extraClasses={NavLinkTextClasses} />
       </Link>
-      <ul className="absolute top-8 bg-white hidden group-hover:block rounded-5 py-2 w-[160px]">
+      <ul className="absolute top-8 bg-white hidden group-hover:block rounded-5 py-2 w-[160px] z-20">
         {subLinks.map((subLink, index) => {
           return (
             <li
