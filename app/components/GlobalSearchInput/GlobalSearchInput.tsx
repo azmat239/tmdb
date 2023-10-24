@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { GlobalSearchInputType } from "./GlobalSearchInput.types";
 import classNames from "classnames";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const GlobalSearchInput = ({
   ActionIcon,
@@ -16,12 +16,13 @@ const GlobalSearchInput = ({
     setInputValue(e.target.value);
   };
   const handleInputKeyPress = (e: any) => {
+    const searchQuery = inputValue;
     if (e.key == "Enter") {
-      router.push(`/search`);
+      router.push(`/search?query=${searchQuery}`);
     }
   };
   const GlobalInputClasses = classNames(
-    "flex gap-2 bg-white items-center h-10 max-w-[1440px] py-6 px-20 border-y-[1px] border-black"
+    "flex gap-2 bg-white items-center max-w-[1440px] py-3 px-20 border-y-[1px] border-black"
   );
   return (
     <div className={`${GlobalInputClasses} ${extraClasses ?? ""}`}>

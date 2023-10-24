@@ -1,21 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SearchMovieCards from "./SearchMovieCards";
+import SearchMovie from "./SearchMovieCardList";
 import { listsResult } from "../../mockdata";
 
 const meta = {
   title: "Components/SearchMovieCards",
-  component: SearchMovieCards,
+  component: SearchMovie,
   tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof SearchMovieCards>;
+} satisfies Meta<typeof SearchMovie>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Search_Result_MovieCards: Story = {
+export const Search_Result_Movie: Story = {
   args: {
-    lists: listsResult,
+    movies: listsResult,
+    variant: "company",
   },
 };

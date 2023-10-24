@@ -3,7 +3,7 @@ import { LogoType } from "../components/Logo/Logo.type";
 import { MovieCardtypes } from "../components/MovieCard/MovieCard.types";
 import { MovieSectionTypes } from "../components/MovieSection/MovieSection.types";
 import { NavLinkType } from "../components/NavLink/NavLink.types";
-import { SearchMovieCardsType } from "../components/SearchMovieCards/SearchMovieCards.types";
+import { SearchMovieCardsType } from "../components/SearchMovie/SearchMovieCardList.types";
 import { SearchSideBarType } from "../components/SearchSideBar/SearchSideBar.types";
 import { footerLogoType } from "../components/footerLogo/footerLogo.type";
 import { FooterMenuType } from "../components/footerMenu/FooterMenu.types";
@@ -382,44 +382,6 @@ export let inputProps: InputType = {
     console.log("Changed The Text");
   },
 };
-
-export const items: SearchSideBarType["items"] = [
-  {
-    text: "Movies",
-    badgeNumber: 1666,
-    url: "/",
-  },
-  {
-    text: "People",
-    badgeNumber: 3583,
-    url: "/",
-  },
-  {
-    text: "Tv Shows",
-    badgeNumber: 368,
-    url: "/",
-  },
-  {
-    text: "Collections",
-    badgeNumber: 16,
-    url: "/",
-  },
-  {
-    text: "Companies",
-    badgeNumber: 125,
-    url: "/",
-  },
-  {
-    text: "Keyword",
-    badgeNumber: 29,
-    url: "/",
-  },
-  {
-    text: "Network",
-    badgeNumber: 7,
-    url: "/",
-  },
-];
 
 export const listsResult: SearchMovieCardsType["lists"] = [
   {
