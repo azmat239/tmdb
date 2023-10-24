@@ -11,8 +11,8 @@ const SearchMovieCard = ({
   title,
   url,
   variant,
-  extraClasses,
   description,
+  extraClasses,
 }: SearchMovieCardType) => {
   const searchMovieCardClasses = classNames(
     "flex min-w-[820px] border-lightGrey"
@@ -22,6 +22,7 @@ const SearchMovieCard = ({
   });
   let titleClasses = classNames("font-semibold", {
     "text-slate-400 hover:text-slate-700": variant == "company",
+    "text-black hover:text-slate-700": variant == "others",
   });
   let mainTextClasses = classNames({
     "py-5 px-4 gap-2 flex flex-col": variant == "others",
