@@ -21,6 +21,7 @@ const SearchMovieCardList = ({
               description={movie.description}
               variant={variant}
               extraClasses={extraClasses ?? ""}
+              key={index}
             />
           );
         })}

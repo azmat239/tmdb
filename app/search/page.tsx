@@ -1,21 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchSideBar from "../components/SearchSideBar/SearchSideBar";
 import SearchMovieCardList from "../components/SearchMovie/SearchMovieCardList";
 import GlobalSearchInput from "../components/GlobalSearchInput/GlobalSearchInput";
 import { BiSearchAlt2 } from "react-icons/bi";
 import classNames from "classnames";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import useSWR from "swr";
 import { apiKey, fetcher, imgUrl } from "../api";
-import Paging from "../components/Paging/Paging";
+import ReactPaginate from "react-paginate";
 
 const Search = () => {
   const SearchInputClasses = classNames("absolute top-[68px] left-0");
+  const router = useRouter();
   const SearchParams = useSearchParams();
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageOffset, setPageOffset] = useState(1);
   const searchValue = SearchParams.get("query");
-  const [value, setValue] = useState<
+  const [category, setCategory] = useState<
     "collection" | "movie" | "company" | "keyword" | "multi" | "person" | "tv"
   >("movie");
 
@@ -24,7 +25,7 @@ const Search = () => {
     error: movieError,
     isLoading: movieisLoading,
   } = useSWR(
-    `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${apiKey}&page=${pageNumber.toString()}`,
+    `https://api.themoviedb.org/3/search/movie?query=${searchValue}&api_key=${apiKey}`,
     fetcher
   );
   const {
@@ -99,170 +100,148 @@ const Search = () => {
     return <div>Error</div>;
   }
 
-  const collectionResults =
-    collectionData &&
-    collectionData.results &&
-    collectionData.results.map((movie: any) => {
+  const itemsPerPage = 5;
+
+  const searchResults = (movies: any, itemsPerPage: any) => {
+    const start = (pageOffset - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const paginatedMovies = movies.slice(start, end);
+    return paginatedMovies.map((movie: any) => {
       return {
-        image: {
-          imgSrc: `${imgUrl}${movie.poster_path}`,
-          altText: "not found",
-        },
-        title: movie.name,
-        date: "",
-        description: movie.overview,
+        image: movie.poster_path
+          ? {
+              imgSrc:
+                `${imgUrl}${movie.poster_path}` ||
+                `${imgUrl}${movie.profile_path}`,
+              altText: "not found",
+            }
+          : movie.profile_path
+          ? {
+              imgSrc: `${imgUrl}${movie.profile_path}`,
+              altText: "not found",
+            }
+          : {
+              imgSrc: "https://placehold.jp/150x150.png",
+              altText: "notfound",
+            },
+        title: movie.title || movie.name,
+        date: movie.release_date || movie.first_air_date,
+        description: movie.overview || movie.known_for_department,
         url: "/",
       };
     });
-  const searchResults = (movie: any) =>
-    movie.results.map((movie: any) => {
-      return {
-        image: {
-          imgSrc: `${imgUrl}${movie.poster_path}`,
-          altText: "not found",
-        },
-        title: movie.title,
-        date: movie.release_date,
-        description: movie.overview,
-        url: "/",
-      };
-    });
-  const peopleResults =
-    peopleData &&
-    peopleData.results &&
-    peopleData.results.map((movie: any) => {
-      return {
-        image: {
-          imgSrc: `${imgUrl}${movie.profile_path}`,
-          altText: "not found",
-        },
-        title: movie.name,
-        date: "",
-        description: movie.known_for_department,
-        url: "/",
-      };
-    });
-  const keywordResults = searchResults(keywordData);
-  const movieResults = searchResults(movieData);
-  const tvResults = tvData.results.map((movie: any) => {
-    return {
-      image: {
-        imgSrc: `${imgUrl}${movie.poster_path}`,
-        altText: "not found",
-      },
-      title: movie.name,
-      date: movie.first_air_date,
-      description: movie.overview,
-      url: "/",
-    };
-  });
-  const multiResults = searchResults(multiData);
-  const companyResults = companyData.results.map((movie: any) => {
-    return {
-      image: {
-        imgSrc: `${imgUrl}${movie.poster_path}`,
-        altText: "not found",
-      },
-      title: movie.name,
-      date: movie.first_air_date,
-      description: movie.overview,
-      url: "/",
-    };
-  });
-  const Results =
-    value == "movie"
-      ? movieResults
-      : value == "tv"
-      ? tvResults
-      : value == "collection"
-      ? collectionResults
-      : value == "person"
-      ? peopleResults
-      : value == "multi"
-      ? multiResults
-      : value == "company"
-      ? companyResults
-      : value == "keyword"
-      ? keywordResults
-      : "";
+  };
+
   var totalPages =
-    value == "movie"
+    category == "movie"
       ? movieData.total_pages
-      : value == "tv"
+      : category == "tv"
       ? tvData.total_pages
-      : value == "collection"
+      : category == "collection"
       ? collectionData.total_pages
-      : value == "person"
+      : category == "person"
       ? peopleData.total_pages
-      : value == "multi"
+      : category == "multi"
       ? multiData.total_pages
-      : value == "company"
+      : category == "company"
       ? companyData.total_pages
-      : value == "keyword"
+      : category == "keyword"
       ? keywordData.total_pages
       : "";
+
+  var results = searchResults(
+    category == "movie"
+      ? movieData.results
+      : category == "tv"
+      ? tvData.results
+      : category == "collection"
+      ? collectionData.results
+      : category == "person"
+      ? peopleData.results
+      : category == "multi"
+      ? multiData.results
+      : category == "company"
+      ? companyData.results
+      : category == "keyword"
+      ? keywordData.results
+      : "",
+    itemsPerPage
+  );
+
+  const updateURL = (searchQuery: any, value: any) => {
+    router.push(`/search?query=${searchQuery}&category=${value}`);
+  };
   const items = [
     {
       text: "Movies",
       url: () => {
-        setValue("movie");
-        setPageNumber(1);
+        setCategory("movie");
+        // setPageNumber(1);
+        updateURL(searchValue, "movies");
       },
-      badgeNumber: movieData.total_results,
+      badgeNumber: movieData.total_pages,
     },
     {
       text: "People",
       url: () => {
-        setValue("person");
-        setPageNumber(1);
+        setCategory("person");
+        // setPageNumber(1);
+        updateURL(searchValue, "person");
       },
-      badgeNumber: peopleData.total_results,
+      badgeNumber: peopleData.total_pages,
     },
     {
       text: "Tv Shows",
       url: () => {
-        setValue("tv");
-        setPageNumber(1);
+        setCategory("tv");
+        // setPageNumber(1);
+        updateURL(searchValue, "Tv");
       },
-      badgeNumber: tvData.total_results,
+      badgeNumber: tvData.total_pages,
     },
     {
       text: "Collections",
       url: () => {
-        setValue("collection");
-        setPageNumber(1);
+        setCategory("collection");
+        // setPageNumber(1);
+        updateURL(searchValue, "collection");
       },
-      badgeNumber: collectionData.total_results,
+      badgeNumber: collectionData.total_pages,
     },
     {
       text: "Companies",
       url: () => {
-        setValue("company");
-        setPageNumber(1);
+        setCategory("company");
+        // setPageNumber(1);
+        updateURL(searchValue, "company");
       },
-      badgeNumber: companyData.total_results,
+      badgeNumber: companyData.total_pages,
     },
     {
       text: "Keyword",
       url: () => {
-        setValue("keyword");
-        setPageNumber(1);
+        setCategory("keyword");
+        // setPageNumber(1);
+        updateURL(searchValue, "keyword");
       },
-      badgeNumber: keywordData.total_results,
+      badgeNumber: keywordData.total_pages,
     },
     {
       text: "Network",
       url: () => {
-        setValue("multi");
-        setPageNumber(1);
+        setCategory("multi");
+        // setPageNumber(1);
+        updateURL(searchValue, "network");
       },
-      badgeNumber: multiData.total_results,
+      badgeNumber: multiData.total_pages,
     },
   ];
-
-  const handleClick = (newpage: number) => {
-    setPageNumber(newpage);
+  const handlePageClick = (data: any) => {
+    const selectedPage = data.selected + 1;
+    setPageOffset(selectedPage);
   };
+  const pageCount = Math.ceil(20 / itemsPerPage);
+
   return (
     <div>
       <GlobalSearchInput
@@ -272,23 +251,31 @@ const Search = () => {
         extraClasses={`${SearchInputClasses}`}
       />
       <div className="flex gap-4 mt-24">
-        <SearchSideBar heading="Search Result" items={items} />
+        <SearchSideBar heading="Search Result" items={items} value={category} />
         <SearchMovieCardList
-          movies={Results}
-          variant={value == "company" ? "company" : "others"}
+          movies={results}
+          variant={category == "company" ? "company" : "others"}
           extraClasses={
-            value == "company"
+            category == "company"
               ? "h-[30px] border-y-[1px] mb-1"
               : "h-[140px] shadow-md border-[1px] mb-4 rounded-8 "
           }
         />
       </div>
-
-      <Paging
-        pageNumber={pageNumber}
-        totalPages={totalPages}
-        onClick={handleClick}
-      />
+      <div>
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={8}
+          pageCount={pageCount}
+          renderOnZeroPageCount={null}
+          containerClassName={"pagination"}
+          activeClassName={"active"}
+          previousLabel=""
+          disableInitialCallback={true}
+        />
+      </div>
     </div>
   );
 };

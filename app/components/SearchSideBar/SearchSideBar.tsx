@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SearchSideBarType } from "./SearchSideBar.types";
 import Text from "../Text/Text";
 import classNames from "classnames";
 
-const SearchSideBar = ({ heading, items, extraClasses }: SearchSideBarType) => {
+const SearchSideBar = ({
+  heading,
+  items,
+  value,
+  extraClasses,
+}: SearchSideBarType) => {
   const searchSideBarClasses = classNames(
     "flex flex-col min-w-[280px] max-h-[420px] rounded-8 border-[1px] border-lightGrey"
   );
@@ -22,9 +27,8 @@ const SearchSideBar = ({ heading, items, extraClasses }: SearchSideBarType) => {
           return (
             <button
               onClick={() => {
-                setIsActive(index);
-                //@ts-ignore
                 item.url();
+                setIsActive(index);
               }}
               key={index}
               data-isactive={isActive == index}

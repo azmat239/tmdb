@@ -9,6 +9,7 @@ const GlobalSearchInput = ({
   placeholder,
   defaultValue,
   extraClasses,
+  value,
 }: GlobalSearchInputType) => {
   const router = useRouter();
   const [inputValue, setInputValue] = useState("");
@@ -18,7 +19,7 @@ const GlobalSearchInput = ({
   const handleInputKeyPress = (e: any) => {
     const searchQuery = inputValue;
     if (e.key == "Enter") {
-      router.push(`/search?query=${searchQuery}`);
+      router.push(`/search?searckKey=${searchQuery}&category=movie`);
     }
   };
   const GlobalInputClasses = classNames(

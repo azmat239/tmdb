@@ -5,4 +5,5 @@ export type GlobalSearchInputType = {
   placeholder?: string;
   defaultValue?: string;
   extraClasses?: string;
+  value?: string;
 };
