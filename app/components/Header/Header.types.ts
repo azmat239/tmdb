@@ -5,6 +5,6 @@ import { NavLinkType } from "../NavLink/NavLink.types";
 export type HeaderType = {
   logo: LogoType;
   links: Array<NavLinkType>;
-  ActionIcon: IconType;
+
   extraClasses?: string;
 };

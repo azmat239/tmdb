@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BiSearchAlt2 } from "react-icons/bi";
 import Header from "./Header";
 import { links, logoValue } from "../../mockdata";
 
@@ -19,6 +18,5 @@ export const Headers: Story = {
   args: {
     logo: logoValue,
     links: links,
-    ActionIcon: BiSearchAlt2,
   },
 };

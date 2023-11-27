@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Header from "./components/Header/Header";
-import { BiSearchAlt2 } from "react-icons/bi";
 import Footer from "./components/footer/footer";
 import { Footerlogo, links, logoValue, menus } from "./mockdata";
 
@@ -24,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Header logo={logoValue} links={links} ActionIcon={BiSearchAlt2} />
+        <Header logo={logoValue} links={links} />
         <section className="mx-[65px]">{children}</section>
         <Footer menus={menus} logo={Footerlogo} />
       </body>

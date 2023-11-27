@@ -2,7 +2,6 @@
 import useSWR from "swr";
 import Hero from "./components/Hero/Hero";
 import MovieSection from "./components/MovieSection/MovieSection";
-import { movieLists } from "./mockdata";
 import { apiKey, baseApiUrl, fetcher, imgUrl, movieLink } from "./api";
 import { useState } from "react";
 
